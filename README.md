@@ -1,3 +1,5 @@
+[![Build](https://github.com/jfontsaballs/KotlinJsReactPatterns/actions/workflows/gradle.yml/badge.svg)](https://github.com/jfontsaballs/KotlinJsReactPatterns/actions/workflows/gradle.yml)
+
 # React patterns for KotlinJs
 
 This is a showcase of React patterns and other associate libraries as used in KotlinJS via [Jetbrain's Kotlin Wrappers](https://github.com/JetBrains/kotlin-wrappers).
