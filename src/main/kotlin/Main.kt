@@ -55,6 +55,10 @@ val root = VFC {
 	renderSeparator()
 
 	GenericComponentExample{}
+
+	renderSeparator()
+
+	AnimationByCodeExample()
 }
 
 // This is one way to reuse code, however be aware that hooks (useState, useEffect, etc.) MUST NOT
