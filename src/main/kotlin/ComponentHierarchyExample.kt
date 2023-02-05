@@ -1,6 +1,8 @@
 import react.*
 import react.dom.html.ReactHTML.div
 import react.dom.html.ReactHTML.input
+import utilities.LiftedState
+import utilities.useLiftedState
 import web.html.InputType
 
 /**
@@ -11,7 +13,7 @@ val ComponentHierarchyExample = VFC {
     // must lift it to the container of all components that need it
     var name by useState("default")
     // With the surname state we are going to showcase another way of letting a child component edit its value
-    val surnameState = useState("aaa")
+    val surnameState = useLiftedState("aaa")
 
     // We then pass the name to the component
     MyDisplay {
@@ -87,7 +89,7 @@ val MyQuery = FC<NameQueryProps> { props ->
 // In this case we pass an object that allows both getting and setting the state, instead
 // of passing the value and a setter separately
 external interface NameQuery2Props : Props {
-    var contentState: StateInstance<String>
+    var contentState: LiftedState<String>
 }
 
 val MyQuery2 = FC<NameQuery2Props> { props ->

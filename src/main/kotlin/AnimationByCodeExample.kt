@@ -5,6 +5,7 @@ import react.VFC
 import react.dom.html.ReactHTML.div
 import react.useEffectOnce
 import react.useState
+import utilities.cssProps
 import web.timers.clearInterval
 import web.timers.setInterval
 import kotlin.time.Duration.Companion.seconds
