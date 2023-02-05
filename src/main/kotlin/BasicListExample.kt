@@ -14,14 +14,14 @@ external interface BasicListExampleProps : Props {
  * This is a component that shows each item in the list surrounded by a border
  */
 val BasicListExample = FC<BasicListExampleProps> { props ->
-	for (item in props.myItems) {
-		span {
-			css {
-				padding = 4.px
-				border = Border(1.px, LineStyle.solid)
-			}
-			+item
-		}
-	}
+    for (item in props.myItems) {
+        span {
+            css {
+                padding = 4.px
+                border = Border(1.px, LineStyle.solid)
+            }
+            +item
+        }
+    }
 }
 

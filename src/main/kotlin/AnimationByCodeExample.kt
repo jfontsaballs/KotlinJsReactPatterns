@@ -1,7 +1,6 @@
 import csstype.NamedColor
 import csstype.px
 import emotion.react.css
-import js.core.jso
 import react.VFC
 import react.dom.html.ReactHTML.div
 import react.useEffectOnce

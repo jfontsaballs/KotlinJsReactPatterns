@@ -1,8 +1,6 @@
 import csstype.PropertiesBuilder
 import js.core.jso
-import react.PropsWithStyle
 import react.StateInstance
-import web.dom.Element
 
 fun <T> StateInstance<T>.get() = component1()
 fun <T> StateInstance<T>.set(newValue: T) = component2()(newValue)

@@ -1,15 +1,17 @@
 import csstype.px
 import emotion.react.css
-import react.*
-import web.dom.document
+import react.ChildrenBuilder
+import react.VFC
+import react.create
 import react.dom.client.createRoot
 import react.dom.html.ReactHTML.div
+import web.dom.document
 
 fun main() {
-	val container = document.createElement("div")
-	document.body.appendChild(container)
+    val container = document.createElement("div")
+    document.body.appendChild(container)
 
-	createRoot(container).render(root.create())
+    createRoot(container).render(root.create())
 }
 
 // VFC creates a component without properties
@@ -17,48 +19,48 @@ fun main() {
 // In Kotlin, there are other implementations of HTML elements available under different namespaces,
 // however, when using react only those in the correct namespace will work.
 val root = VFC {
-	div {
-		FormattingExample {
-			name = "MyName"
-		}
-	}
+    div {
+        FormattingExample {
+            name = "MyName"
+        }
+    }
 
-	renderSeparator()
+    renderSeparator()
 
-	div {
-		// When using a component without props, do not forget calling it either with parentheses or an empty lambda
-		ComponentHierarchyExample() // Or ComponentHierarchyExample{}
-	}
+    div {
+        // When using a component without props, do not forget calling it either with parentheses or an empty lambda
+        ComponentHierarchyExample() // Or ComponentHierarchyExample{}
+    }
 
-	renderSeparator()
+    renderSeparator()
 
-	div {
-		TransformingStateExample {}
-	}
+    div {
+        TransformingStateExample {}
+    }
 
-	renderSeparator()
+    renderSeparator()
 
-	BasicListExample {
-		myItems = listOf("patata", "mongeta", "carbassó")
-	}
+    BasicListExample {
+        myItems = listOf("patata", "mongeta", "carbassó")
+    }
 
-	renderSeparator()
+    renderSeparator()
 
-	ComponentWithChildrenExample {
-		myItems = listOf("patata", "mongeta", "carbassó")
-	}
+    ComponentWithChildrenExample {
+        myItems = listOf("patata", "mongeta", "carbassó")
+    }
 
-	renderSeparator()
+    renderSeparator()
 
-	ComponentListExample{}
+    ComponentListExample {}
 
-	renderSeparator()
+    renderSeparator()
 
-	GenericComponentExample{}
+    GenericComponentExample {}
 
-	renderSeparator()
+    renderSeparator()
 
-	AnimationByCodeExample()
+    AnimationByCodeExample()
 }
 
 // This is one way to reuse code, however be aware that hooks (useState, useEffect, etc.) MUST NOT
@@ -66,9 +68,9 @@ val root = VFC {
 // The developers of Kotlin Wrappers do not approve of this pattern, but I find it useful and more
 // lightweight than creating a component when no hooks are needed
 fun ChildrenBuilder.renderSeparator() {
-	div {
-		css {
-			minHeight = 16.px
-		}
-	}
+    div {
+        css {
+            minHeight = 16.px
+        }
+    }
 }
