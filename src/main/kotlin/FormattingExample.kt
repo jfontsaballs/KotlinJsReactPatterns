@@ -1,4 +1,5 @@
-import csstype.Length
+import csstype.FontSize
+import csstype.Margin
 import csstype.PropertiesBuilder
 import csstype.px
 import emotion.css.cx
@@ -53,8 +54,7 @@ val FormattingExample = FC<FormattingExampleProps> { props ->
     input {
         // We might combine css classes declared in code with inline css properties
         css(myInput) {
-            fontSize = 14.px
-            applyLeftRightMargin(3.px)
+            applyFontSize(30.px)
         }
         type = InputType.text
         value = name
@@ -66,15 +66,13 @@ val FormattingExample = FC<FormattingExampleProps> { props ->
 
 // We might create a CSS class and use it elsewhere
 val myInput = emotion.css.ClassName {
-    // When defining CSS in code, dashes disappear and camelCase is used
-    marginTop = 5.px // that would be margin-top in a normal css file
-    marginBottom = 5.px
+    margin = Margin(vertical = 5.px, horizontal = 3.px)
 }
 
 // We might also define extension functions on PropertiesBuilder
 // I don't know if the developers of Kotlin Wrappers would approve of this pattern,
 // but I've found it useful in certain situations
-fun PropertiesBuilder.applyLeftRightMargin(marginValue: Length) {
-    marginLeft = marginValue
-    marginRight = marginValue
+fun PropertiesBuilder.applyFontSize(value: FontSize) {
+    // When defining CSS in code, dashes disappear and camelCase is used
+    fontSize = value // that would be font-size in a normal css file
 }
