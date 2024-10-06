@@ -1,20 +1,9 @@
 plugins {
-    kotlin("js") version "1.8.10"
+    kotlin("multiplatform") version "2.0.20"
 }
 
 group = "com.github.jfontsaballs"
-version = "0.1"
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    implementation(enforcedPlatform("org.jetbrains.kotlin-wrappers:kotlin-wrappers-bom:1.0.0-pre.491"))
-    implementation("org.jetbrains.kotlin-wrappers:kotlin-react")
-    implementation("org.jetbrains.kotlin-wrappers:kotlin-react-dom")
-    implementation("org.jetbrains.kotlin-wrappers:kotlin-emotion")
-}
+version = "0.2"
 
 kotlin {
     js {
@@ -26,5 +15,15 @@ kotlin {
         // This lets Kotlin know this project targets the browser
         // Alternatively we might target Node.js
         browser {}
+    }
+
+    sourceSets {
+        val jsMain by getting {
+            dependencies {
+                implementation(kotlinWrappers.react)
+                implementation(kotlinWrappers.reactDom)
+                implementation(kotlinWrappers.emotion)
+            }
+        }
     }
 }

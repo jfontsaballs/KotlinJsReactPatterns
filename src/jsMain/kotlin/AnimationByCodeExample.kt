@@ -1,25 +1,23 @@
-import csstype.NamedColor
-import csstype.px
 import emotion.react.css
-import react.VFC
+import react.*
 import react.dom.html.ReactHTML.div
-import react.useEffectOnce
-import react.useState
 import utilities.cssProps
+import web.cssom.NamedColor
+import web.cssom.px
 import web.timers.clearInterval
 import web.timers.setInterval
 import kotlin.time.Duration.Companion.seconds
 
-val AnimationByCodeExample = VFC {
+val AnimationByCodeExample = FC<Props> {
     div {
         css {
             // A properties instance can be merged into another with the unary plus operator
             +myMargin
         }
         val (blink, setBlink) = useState(false)
-        useEffectOnce {
+        useEffectOnceWithCleanup {
             val intervalId = setInterval(1.seconds) { setBlink { !it } }
-            cleanup { clearInterval(intervalId) }
+            onCleanup { clearInterval(intervalId) }
         }
         // A properties instance can also be assigned to an HTML element's style
         // Use style to set formatting when it changes rapidly, otherwise it's better to use css

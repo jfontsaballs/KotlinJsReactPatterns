@@ -1,8 +1,8 @@
-import csstype.*
 import emotion.react.css
 import react.FC
 import react.PropsWithChildren
 import react.dom.html.ReactHTML.span
+import web.cssom.*
 
 /**
  * We are going to take the BasicListExample and extract the logic for creating the border

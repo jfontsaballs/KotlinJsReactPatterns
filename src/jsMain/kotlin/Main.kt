@@ -1,10 +1,12 @@
-import csstype.px
+
 import emotion.react.css
 import react.ChildrenBuilder
-import react.VFC
+import react.FC
+import react.Props
 import react.create
 import react.dom.client.createRoot
 import react.dom.html.ReactHTML.div
+import web.cssom.px
 import web.dom.document
 
 fun main() {
@@ -18,10 +20,10 @@ fun main() {
 // Be very careful to always import HTML elements from the react.dom.html.ReactHTML namespace
 // In Kotlin, there are other implementations of HTML elements available under different namespaces,
 // however, when using react only those in the correct namespace will work.
-val root = VFC {
+val root = FC<Props> {
     div {
         FormattingExample {
-            name = "MyName"
+            name = "My Name"
         }
     }
 

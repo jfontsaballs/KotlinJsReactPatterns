@@ -1,7 +1,4 @@
-import csstype.FontSize
-import csstype.Margin
 import csstype.PropertiesBuilder
-import csstype.px
 import emotion.css.cx
 import emotion.react.css
 import react.FC
@@ -9,6 +6,10 @@ import react.Props
 import react.dom.html.ReactHTML.div
 import react.dom.html.ReactHTML.input
 import react.useState
+import web.cssom.ClassName
+import web.cssom.FontSize
+import web.cssom.Margin
+import web.cssom.px
 import web.html.InputType
 
 external interface FormattingExampleProps : Props {
@@ -34,15 +35,15 @@ val FormattingExample = FC<FormattingExampleProps> { props ->
         // Both functions return an instance of class ClassName, which can be used in the css extension function
         // that emotion provides
         // Be careful to use the correct import: emotion.react.css
-        css(csstype.ClassName("myBackgroundColor"), csstype.ClassName("myForegroundColor")) {
+        css(ClassName("myBackgroundColor"), ClassName("myForegroundColor")) {
             padding = 5.px
         }
 
         // Or they can be assigned to the className property, using the cx function to combine them
-        className = cx(csstype.ClassName("myBackgroundColor"), csstype.ClassName("myForegroundColor"))
+        className = cx(ClassName("myBackgroundColor"), ClassName("myForegroundColor"))
 
         // Or concatenating them
-        className = csstype.ClassName("myBackgroundColor, myForegroundColor")
+        className = ClassName("myBackgroundColor, myForegroundColor")
 
         // In Javascript, we would return content (JSX) from a function component for it to be rendered
         // In Kotlin Wrappers they allow for content to be added throughout the function. This is accomplished

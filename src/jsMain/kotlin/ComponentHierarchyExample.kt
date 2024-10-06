@@ -8,7 +8,7 @@ import web.html.InputType
 /**
  * This is a showcase of using components inside other components and lifting state
  */
-val ComponentHierarchyExample = VFC {
+val ComponentHierarchyExample = FC<Props> {
     // In this example, the name needs to be known by both NameDisplay and NameQuery components, so we
     // must lift it to the container of all components that need it
     var name by useState("default")

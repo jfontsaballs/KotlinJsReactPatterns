@@ -1,8 +1,9 @@
-import react.VFC
+import react.FC
+import react.Props
 import react.dom.html.ReactHTML
 import react.useState
 
-val TransformingStateExample = VFC {
+val TransformingStateExample = FC<Props> {
     // That's another way of using state, age contains the current value and setAge is a function
     // that can be passed the new value or a lambda to calculate it
     val (age, setAge) = useState(0)

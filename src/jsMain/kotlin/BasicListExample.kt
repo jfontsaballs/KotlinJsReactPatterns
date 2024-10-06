@@ -1,10 +1,10 @@
-import csstype.Border
-import csstype.LineStyle
-import csstype.px
 import emotion.react.css
 import react.FC
 import react.Props
 import react.dom.html.ReactHTML.span
+import web.cssom.Border
+import web.cssom.LineStyle
+import web.cssom.px
 
 external interface BasicListExampleProps : Props {
 	var myItems: List<String>

@@ -1,9 +1,12 @@
-import csstype.Color
-import csstype.NamedColor
-import csstype.px
 import emotion.react.css
-import react.*
+import react.ChildrenBuilder
+import react.FC
+import react.Props
 import react.dom.html.ReactHTML.span
+import react.useMemo
+import web.cssom.Color
+import web.cssom.NamedColor
+import web.cssom.px
 
 external interface MyGenericComponentProps<T : Any> : Props {
     var item: T
@@ -40,7 +43,7 @@ fun <T : Any> ChildrenBuilder.myGenericNonComponent(value: T, colorGetter: (T) -
 // Then we need to instantiate the generic component by concreting the class.
 // We can do it outside
 val MyGenericComponentForInt = myGenericComponentFactory<Int>()
-val GenericComponentExample = VFC {
+val GenericComponentExample = FC<Props> {
     // Or inside the component by memoizing it
     val MyGenericComponentForString = useMemo { myGenericComponentFactory<String>() }
     MyGenericComponentForInt {

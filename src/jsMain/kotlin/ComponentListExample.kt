@@ -1,17 +1,17 @@
-import csstype.Border
-import csstype.LineStyle
-import csstype.NamedColor
-import csstype.px
 import emotion.react.css
 import react.*
 import react.dom.html.ReactHTML.div
 import react.dom.html.ReactHTML.span
+import web.cssom.Border
+import web.cssom.LineStyle
+import web.cssom.NamedColor
+import web.cssom.px
 
 /**
  * This is a sample of using a component to separate the layout logic for other
  * components
  */
-val ComponentListExample = VFC {
+val ComponentListExample = FC<Props> {
     ComponentList {
         listItems = listOf(
             // In this case we don't have the help of the ChildrenBuilder, so we need to
